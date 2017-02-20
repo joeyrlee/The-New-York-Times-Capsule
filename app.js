@@ -1,7 +1,15 @@
+//Vue.js file for facilitating the 
+//two-way search input data binding
+
 var app = new Vue({
   el: '#search',
   data: {
-  	message: 'Simply type in a book title and get back high-quality recommendations for similar reads!',
   	userInput: 'Enter a book name here'
+  },
+  methods: {
+  	handleSearchInputChange: function(e) {
+	  var currInput = this.userInput;
+	  console.log('this.userInput: ', this.userInput)
+	}
   }
-})
+});

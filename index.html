@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- <script src="vue.min.js"></script> Production script -->
-  <script src="vue.js"></script> <!-- Development script -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script> Production script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.js"></script> <!-- Development script -->
+
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.3/axios.min.js"></script> Production script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.3/axios.js"></script> <!-- Development script -->
   <title>Recommended Reads</title>
 </head>
 <body>
   <h1>Recommended Reads</h1>
   <div id="search">
-  	<p>{{ message }}</p>
-  	<input v-model="userInput">
+  	<p>Simply type in a book title and get back high-quality recommendations for similar reads!</p>
+  	<!-- pithy justification of choices here -->
+  	<input v-model="userInput" 
+  				 v-on:keyup.enter=handleSearchInputChange()>
   </div>
 
+  <div id="booksContainer"></div>
+
+  <script src="searchConfig.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
