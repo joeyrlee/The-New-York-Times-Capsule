@@ -13,9 +13,14 @@
   <h1>Randomly Recommended Reads</h1>
   <p>Simply press the button and voilà, a randomly recommended read, <em>just for you</em>.</p>
 
-  <div id="button">
-    <button type="button" v-on:click=generateRandomDate()>Generate New Read</button>
-  </div>
+  <button 
+    id="button" 
+    type="button" 
+    v-on:click=getBook()
+      >Generate New Read
+  </button>
+
+  <div id="booksContainer"></div>
 
   <script src="app.js"></script>
 </body>
