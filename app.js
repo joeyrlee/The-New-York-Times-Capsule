@@ -4,7 +4,7 @@
 var app = new Vue({
   el: '#search',
   data: {
-  	userInput: 'Enter a book name here'
+  	userInput: 'Enter a book name and press enter'
   },
   methods: {
   	handleSearchInputChange: function(e) {
