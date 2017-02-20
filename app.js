@@ -5,13 +5,20 @@ var app = new Vue({
   el: '#button',
   data: {
   	userInput: 'Type in a book name and press enter',
+  	category: '',
   	books: {}
   },
   methods: {
   	//call the NYTimes API and store/update the data in 
   	getBook: function() {
-	  var currInput = this.userInput;
-	  console.log(this.generateRandomDate())
+	  	var date = generateRandomDate();
+	  	axios.get('')
+		  .then(function (response) {
+		    console.log(response);
+		  })
+		  .catch(function (error) {
+		    console.log(error);
+		  });
 		},
 		//generate a random date between June 2008 and now and return the formatted string
 		generateRandomDate: function() {
