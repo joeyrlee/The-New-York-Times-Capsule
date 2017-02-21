@@ -5,7 +5,9 @@ var app = new Vue({
   el: '#app',
   data: {
   	selectedOption: '',
-  	books: {}
+  	book: '',
+  	bookAuthor: '',
+  	bookDescription: ''
   },
   methods: {
   	//call the NYTimes API and store/update the data in 
@@ -15,20 +17,42 @@ var app = new Vue({
   		//vary by each search category, even within the June 2008-present timeline,
   		//a while loop is configured to generate a new date and re-attempt the http 
   		//request when no data is found for requested ones
-  		while (!data) {
-		  	var date = this.generateRandomDate();
-		  	axios.get('http://api.nytimes.com/svc/books/v3/lists/' + date + '/'
-		  		+ this.encodeListName(this.selectedOption) + '.json?api-key=' + '1bd910ccf31f485e87baf23e4d3cc6c6')
-			  .then(function (response) {
-			    console.log(`success; response for ${this.selectedOption}: `, response);
-			    this.books = response.data;
-			  })
-			  .catch(function (error) {
-			    console.log('api request error: ', error);
-			    console.log('selected option: ', this.selectedOption);
-			    console.log('randomly generated date: ', date);
-		  	});
-			}
+
+  		//doesn't work, but saving to investigate why
+  	// 	var gotData;
+  	// 	while (!gotData) {
+		 //  	var date = this.generateRandomDate();
+		 //  	axios.get('http://api.nytimes.com/svc/books/v3/lists/' + date + '/'
+		 //  		+ this.encodeListName(this.selectedOption) + '.json?api-key=' + '1bd910ccf31f485e87baf23e4d3cc6c6')
+			//   .then(function (response) {
+			//     this.books = response.data.results.books.slice(0,5);
+			//     console.log(`success; response found these books: `, this.books);
+			//     gotData = true;
+			//   })
+			//   .catch(function (error) {
+			//     console.log('api request error: ', error);
+			//     console.log('for selected option: ', this.selectedOption);
+			//     console.log('for generated date: ', date);
+		 //  	});
+			// }
+
+			var date = this.generateRandomDate();
+	  	axios.get('http://api.nytimes.com/svc/books/v3/lists/' + date + '/'
+	  		+ this.encodeListName(this.selectedOption) + '.json?api-key=' + '1bd910ccf31f485e87baf23e4d3cc6c6')
+		  .then(function (response) {
+				app.$data.book = response.data.results.books[0];
+				app.$data.bookAuthor = response.data.results.books[0].author;
+				// app.$data.bookTitle = response.data.results.books[0].title;
+				// app.$data.bookAuthor = response.data.results.books[0].author;
+				// app.$data.bookDescription = response.data.results.books[0].description;
+		    console.log(`success; response found this book: `, this.bookImage);
+		  })
+		  .catch(function (error) {
+		    console.log('api request error: ', error);
+		    console.log('for selected option: ', this.selectedOption);
+		    console.log('for generated date: ', date);
+		    alert(`Uh-oh! There seems to have been an error retrieving the data for the ${this.selectedOption} search. Please try again!`)
+	  	});
 		},
 		//function to transform the 
 		encodeListName: function(listName) {

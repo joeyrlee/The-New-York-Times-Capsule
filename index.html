@@ -13,7 +13,7 @@
 </head>
 <body>
   <h1>Randomly Recommended Reads</h1>
-  <p>Select a book category, press the button and <strong>voilà</strong>, a randomly recommended read, <em>just for you</em>.</p>
+  <p>Select a book category, press the button and <strong>voilà</strong>, a randomly recommended read, curated from <u>The New York Times'</u> best sellers list</p>
 
   <div id="app">
 	  <!--<input type="radio" id="one" value="hardcover-fiction" v-model="selectedOption">
@@ -41,11 +41,17 @@
 		<button 
 	    type="button"
 	    v-on:click=getBook()
-	      >Generate New Read
+	    >Generate New Read
 	  </button>
 
-	  <div id="bookListContainer">
-
+	  <div id="resultsContainer">
+	    <h2>{{ selectedOption }}</h2>
+	    <div id="#book">
+	      <p id="title">{{ book.title }}</p>
+	      <p id="author">{{ bookAuthor }}</p>
+	      <p id="description">{{ book.description }}</p>
+        <!-- doesn't work <img src={{ book.book_image }} /> -->
+	    </div>
 	  </div>
 	</div>
 

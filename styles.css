@@ -4,9 +4,20 @@ body {
 }
 
 button {
-  margin-top: 2%;
+  margin-top: 15px;
 }
 
-#bookListContainer {
+#resultsContainer {
+  width: 80%;
+  margin: 20px 10% 0 10%;
+  border-top: 2px solid black;
+  text-align: center;
+}
+
+#book p {
+  width: 20%;
+  margin: 20px 40% 0 40%;
   border: 1px solid black;
+  text-align: left;
+  font-weight: bold;
 }
