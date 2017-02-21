@@ -6,11 +6,10 @@ var app = new Vue({
   data: {
   	selectedOption: '',
   	book: '',
-  	bookAuthor: '',
-  	bookDescription: ''
+  	// bookImage: ''
   },
   methods: {
-  	//call the NYTimes API and store/update the data in 
+  	//call the NYTimes API and store/update the data in our book
   	getBook: function() {
   		//because we don't want the user having to interact with re-pressing the 
   		//generate read button on error and the api has various holes of data that 
@@ -36,25 +35,24 @@ var app = new Vue({
 		 //  	});
 			// }
 
-			var date = this.generateRandomDate();
-	  	axios.get('http://api.nytimes.com/svc/books/v3/lists/' + date + '/'
-	  		+ this.encodeListName(this.selectedOption) + '.json?api-key=' + '1bd910ccf31f485e87baf23e4d3cc6c6')
+	  	axios.get('/newbook/' + this.encodeListName(this.selectedOption))
 		  .then(function (response) {
+		  	console.log('response: ', response);
 				app.$data.book = response.data.results.books[0];
-				app.$data.bookAuthor = response.data.results.books[0].author;
-				// app.$data.bookTitle = response.data.results.books[0].title;
-				// app.$data.bookAuthor = response.data.results.books[0].author;
-				// app.$data.bookDescription = response.data.results.books[0].description;
-		    console.log(`success; response found this book: `, this.bookImage);
+				// app.$data.bookImage = '<img src="' + app.$data.book.book_image + '"/>';
+		    console.log(`success; response found this book: `, app.$data.book);
 		  })
 		  .catch(function (error) {
+		  	console.log('*********************************')
 		    console.log('api request error: ', error);
+		  	console.log('*********************************')
 		    console.log('for selected option: ', this.selectedOption);
-		    console.log('for generated date: ', date);
 		    alert(`Uh-oh! There seems to have been an error retrieving the data for the ${this.selectedOption} search. Please try again!`)
 	  	});
 		},
-		//function to transform the 
+
+		//function to transform the english-formatted selected option 
+		//to the api-friendly encoded format
 		encodeListName: function(listName) {
 			switch(listName) {
 				case 'Combined Print and E-Book Fiction':
@@ -86,32 +84,6 @@ var app = new Vue({
 				case 'Sports and Fitness':
 					return 'sports';
 			}
-		},
-		//generate a random date between June 2008 and now and return the formatted string
-		generateRandomDate: function() {
-		  var date;
-		  while(!date){
-			  //the NYTimes API only has data from as early as June 2008
-			  var year = 2008 + Math.floor(Math.random() * 10);
-			  var month = Math.floor(Math.random() * 13);
-			  if (String(month).length < 2) {
-			  	month = '0' + month;
-			  }
-			  var day = Math.floor(Math.random() * 29);
-			  if (String(day).length < 2) {
-			  	day = '0' + day;
-			  }
-		  	
-		  	var randomDate = new Date(year,month,day)
-
-		  	//if the date is in the future OR before 2008-06-02
-			  if (randomDate > new Date() || randomDate < new Date(2008,06,02)) {
-			  	//reset the loop
-			  	date = undefined;
-			  } else {
-			  	return `${year}-${month}-${day}`;
-			  }
-		  }
-	  }
+		}
 	}
 });
