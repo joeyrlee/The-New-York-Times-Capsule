@@ -10,26 +10,25 @@ var app = new Vue({
   methods: {
   	//call the NYTimes API and store/update the data in 
   	getBook: function() {
-  		console.log(this.encodeListName(this.selectedOption));
-  		return;
-
-  		var data;
   		//because we don't want the user having to interact with re-pressing the 
   		//generate read button on error and the api has various holes of data that 
   		//vary by each search category, even within the June 2008-present timeline,
-  		//a while loop is configured to generate a new date when no data is found for certain ones
-  		// while (!data) {
+  		//a while loop is configured to generate a new date and re-attempt the http 
+  		//request when no data is found for requested ones
+  		while (!data) {
 		  	var date = this.generateRandomDate();
-		  	axios.get('http://api.nytimes.com/svc/books/v3/lists/2009-1-02/'
-		  		+ this.category + '.json?api-key=' + '1bd910ccf31f485e87baf23e4d3cc6c6')
+		  	axios.get('http://api.nytimes.com/svc/books/v3/lists/' + date + '/'
+		  		+ this.encodeListName(this.selectedOption) + '.json?api-key=' + '1bd910ccf31f485e87baf23e4d3cc6c6')
 			  .then(function (response) {
-			    console.log(response);
-			    data = response;
+			    console.log(`success; response for ${this.selectedOption}: `, response);
+			    this.books = response.data;
 			  })
 			  .catch(function (error) {
-			    console.log(error);
+			    console.log('api request error: ', error);
+			    console.log('selected option: ', this.selectedOption);
+			    console.log('randomly generated date: ', date);
 		  	});
-			// }
+			}
 		},
 		//function to transform the 
 		encodeListName: function(listName) {

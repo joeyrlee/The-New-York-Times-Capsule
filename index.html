@@ -7,6 +7,7 @@
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.3/axios.min.js"></script> Production script -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.3/axios.js"></script> <!-- Development script -->
 
+  <link rel="icon" href="http://www.powerlineblog.com/ed-assets/2015/12/20-ny-times-logo.w529.h529.2x.jpg" />
   <link rel="stylesheet" href="styles.css" />
   <title>Randomly Recommended Reads</title>
 </head>
@@ -38,13 +39,15 @@
 		</select>
 
 		<button 
-	    type="button" 
+	    type="button"
 	    v-on:click=getBook()
 	      >Generate New Read
 	  </button>
-	</div>
 
-  <div id="booksContainer"></div>
+	  <div id="bookListContainer">
+
+	  </div>
+	</div>
 
   <script src="app.js"></script>
 </body>

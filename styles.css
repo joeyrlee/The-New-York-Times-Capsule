@@ -6,3 +6,7 @@ body {
 button {
   margin-top: 2%;
 }
+
+#bookListContainer {
+  border: 1px solid black;
+}
