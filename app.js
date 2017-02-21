@@ -2,23 +2,67 @@
 //two-way search input data binding
 
 var app = new Vue({
-  el: '#button',
+  el: '#app',
   data: {
-  	userInput: 'Type in a book name and press enter',
-  	category: '',
+  	selectedOption: '',
   	books: {}
   },
   methods: {
   	//call the NYTimes API and store/update the data in 
   	getBook: function() {
-	  	var date = generateRandomDate();
-	  	axios.get('')
-		  .then(function (response) {
-		    console.log(response);
-		  })
-		  .catch(function (error) {
-		    console.log(error);
-		  });
+  		console.log(this.encodeListName(this.selectedOption));
+  		return;
+
+  		var data;
+  		//because we don't want the user having to interact with re-pressing the 
+  		//generate read button on error and the api has various holes of data that 
+  		//vary by each search category, even within the June 2008-present timeline,
+  		//a while loop is configured to generate a new date when no data is found for certain ones
+  		// while (!data) {
+		  	var date = this.generateRandomDate();
+		  	axios.get('http://api.nytimes.com/svc/books/v3/lists/2009-1-02/'
+		  		+ this.category + '.json?api-key=' + '1bd910ccf31f485e87baf23e4d3cc6c6')
+			  .then(function (response) {
+			    console.log(response);
+			    data = response;
+			  })
+			  .catch(function (error) {
+			    console.log(error);
+		  	});
+			// }
+		},
+		//function to transform the 
+		encodeListName: function(listName) {
+			switch(listName) {
+				case 'Combined Print and E-Book Fiction':
+					return 'combined-print-and-e-book-fiction';
+				case 'Combined Print and E-Book Nonfiction':
+					return 'combined-print-and-e-book-nonfiction';
+				case 'Hardcover Fiction':
+					return 'hardcover-fiction';
+				case 'Hardcover Nonfiction':
+					return 'hardcover-nonfiction';
+				case 'Trade Fiction Paperback':
+					return 'trade-fiction-paperback';
+				case 'Paperback Nonfiction':
+					return 'paperback-nonfiction';
+				case 'Advice, How-To, and Miscellaneous':
+					return 'advice-how-to-and-miscellaneous';
+				case "Children's Middle-Grade Hardcover":
+					return 'childrens-middle-grade-hardcover';
+				case 'Picture Books':
+					return 'picture-books';
+				case 'Childrens Series Books':
+					return 'series-books';
+				case 'Young Adult Hardcover':
+					return 'young-adult-hardcover';
+				case 'Business Books':
+					return 'business-books';
+				case 'Science':
+					return 'science';
+				case 'Sports and Fitness':
+					return 'sports';
+			}
 		},
 		//generate a random date between June 2008 and now and return the formatted string
 		generateRandomDate: function() {

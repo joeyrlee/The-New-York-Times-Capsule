@@ -6,19 +6,43 @@
 
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.3/axios.min.js"></script> Production script -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.3/axios.js"></script> <!-- Development script -->
+
   <link rel="stylesheet" href="styles.css" />
   <title>Randomly Recommended Reads</title>
 </head>
 <body>
   <h1>Randomly Recommended Reads</h1>
-  <p>Simply press the button and voilà, a randomly recommended read, <em>just for you</em>.</p>
+  <p>Select a category, press the button and <strong>voilà</strong>, a randomly recommended read, <em>just for you</em>.</p>
 
-  <button 
-    id="button" 
-    type="button" 
-    v-on:click=getBook()
-      >Generate New Read
-  </button>
+  <div id="app">
+	  <!--<input type="radio" id="one" value="hardcover-fiction" v-model="selectedOption">
+		<label for="one">Hardcover Fiction</label>
+		<input type="radio" id="two" value="mass-market-paperback" v-model="selectedOption">
+		<label for="two">Paperback</label>-->
+
+		<select v-model="selectedOption">
+		  <option>Combined Print and E-Book Fiction</option>
+		  <option>Combined Print and E-Book Nonfiction</option>
+		  <option>Hardcover Fiction</option>
+		  <option>Hardcover Nonfiction</option>
+		  <option>Trade Fiction Paperback</option>
+		  <option>Paperback Nonfiction</option>
+		  <option>Advice, How-To, and Miscellaneous</option>
+		  <option>Children's Middle-Grade Hardcover</option>
+		  <option>Picture Books</option>
+		  <option>Childrens Series Books</option>
+		  <option>Young Adult Hardcover</option>
+		  <option>Business Books</option>
+		  <option>Science</option>
+		  <option>Sports and Fitness</option>
+		</select>
+
+		<button 
+	    type="button" 
+	    v-on:click=getBook()
+	      >Generate New Read
+	  </button>
+	</div>
 
   <div id="booksContainer"></div>
 
