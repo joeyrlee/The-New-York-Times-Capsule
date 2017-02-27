@@ -12,10 +12,14 @@
   <title>Randomly Recommended Reads</title>
 </head>
 <body>
-  <h1>Randomly Recommended Reads</h1>
+  <div id="app">
+  <h1 id="title">Randomly Recommended Reads</h1>
+  <div id="usernameContainer">
+  	<input type="text" value="(Optional) Username" />
+  	<input type="submit" value="Submit" />
+  </div>
   <p>Select a book category, press the button and <strong>voilà</strong>, a randomly recommended read, curated from <u>The New York Times'</u> best sellers list</p>
 
-  <div id="app">
 	  <!--<input type="radio" id="one" value="hardcover-fiction" v-model="selectedOption">
 		<label for="one">Hardcover Fiction</label>
 		<input type="radio" id="two" value="mass-market-paperback" v-model="selectedOption">
@@ -46,12 +50,10 @@
 
 	  <div id="resultsContainer">
 	    <h2>{{ selectedOption }}</h2>
-	    <div id="#book">
-	      <!--{{ bookImage }}-->
+	    <div id="book">
 	      <p id="title"><u>{{ book.title }}</u></p>
 	      <p id="author">{{ book.author }}</p>
 	      <p id="description">{{ book.description }}</p>
-        <!-- doesn't work <img src={{ book.book_image }} /> -->
 	    </div>
 	  </div>
 	</div>

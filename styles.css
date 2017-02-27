@@ -14,10 +14,20 @@ button {
   text-align: center;
 }
 
-#book p {
+#title {
+  /*display:inline-block;*/
+}
+
+#usernameContainer {
+  position: absolute;
+  left: 85%;
+  top: 1%;
+}
+
+/*#book p {
   width: 20%;
   margin: 20px 40% 0 40%;
   border: 1px solid black;
   text-align: left;
   font-weight: bold;
-}
+}*/

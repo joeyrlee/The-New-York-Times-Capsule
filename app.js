@@ -6,7 +6,7 @@ var app = new Vue({
   data: {
   	selectedOption: '',
   	book: '',
-  	// bookImage: ''
+  	bookImage: ''
   },
   methods: {
   	//call the NYTimes API and store/update the data in our book
@@ -39,7 +39,10 @@ var app = new Vue({
 		  .then(function (response) {
 		  	console.log('response: ', response);
 				app.$data.book = response.data.results.books[0];
-				// app.$data.bookImage = '<img src="' + app.$data.book.book_image + '"/>';
+				// app.$data.bookImage = app.$data.book.book_image;
+				// var img = document.createElement('img');
+				// img.setAttribute('src', app.$data.bookImage);
+				// document.getElementById('book').appendChild(img);
 		    console.log(`success; response found this book: `, app.$data.book);
 		  })
 		  .catch(function (error) {
