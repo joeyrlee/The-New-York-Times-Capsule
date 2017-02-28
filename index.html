@@ -16,7 +16,7 @@
   <h1 id="title">Randomly Recommended Reads</h1>
   <div id="usernameContainer">
   	<input type="text" value="(Optional) Username" />
-  	<input type="submit" value="Submit" />
+  	<input type="submit" value="Submit" v-on:click=getUserData />
   </div>
   <p>Select a book category, press the button and <strong>voilà</strong>, a randomly recommended read, curated from <u>The New York Times'</u> best sellers list</p>
 
@@ -58,6 +58,7 @@
 	  </div>
 	</div>
 
+  <script src="appMethods.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
