@@ -10,7 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.15.3",
-    "express": "^4.14.1"
+    "express": "^4.14.1",
+    "sequelize": "^3.30.2"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
