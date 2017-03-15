@@ -1,4 +1,4 @@
-# Recommended Reads (working title)
+# The New York Times Capsule
 A time capsule app for visiting past The New York Times Best Sellers lists a la Vue.js and The New York Times Books api
 
 ### Getting Started
