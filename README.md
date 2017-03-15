@@ -6,7 +6,7 @@ To get started, you will need an API key to communicate with the New York Times 
 
 1. http://developer.nytimes.com/signup
 
-Once secured, plug in your key to config/config.example.js (replace API_KEY_HERE with the key, keeping the single quotes) and change the file name to just config.js
+Once secured, plug in your key to config/config.example.js (replace API_KEY_HERE with the key, keeping the single quotes), change the file name to just config.js, and save.
 
 Next open your terminal, navigate to the project folder, and type in the following instructions:
 
