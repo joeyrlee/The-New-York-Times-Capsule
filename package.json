@@ -1,17 +1,18 @@
 {
   "name": "recommendedread",
   "version": "1.0.0",
-  "description": "A simple book recommendation engine",
+  "description": "A simple book list perusal engine",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "nodemon server/server.js"
   },
   "author": "Joey Lee",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.15.3",
     "express": "^4.14.1",
+    "mysql": "^2.13.0",
     "sequelize": "^3.30.2"
   },
   "devDependencies": {
