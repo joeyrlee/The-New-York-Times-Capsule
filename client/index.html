@@ -9,44 +9,42 @@
 
   <link rel="icon" href="http://www.powerlineblog.com/ed-assets/2015/12/20-ny-times-logo.w529.h529.2x.jpg" />
   <link rel="stylesheet" href="styles.css" />
-  <title>Randomly Recommended Reads</title>
+  <title>The New York Times Capsule</title>
 </head>
 <body>
   <div id="app">
-  <h1 id="title">Randomly Recommended Reads</h1>
-  <div id="usernameContainer">
-  	<input type="text" value="(Optional) Username" />
-  	<input type="submit" value="Submit" v-on:click=getUserData />
-  </div>
-  <p>Select a book category, press the button and <strong>voilà</strong>, a randomly recommended read, curated from <u>The New York Times'</u> best sellers list</p>
+  <h1 id="title">The New York Times Capsule</h1>
+  <p>Authoritatively ranked lists of books sold in the United States, sorted by format, genre, <strong><em>and date!</em></strong></p>
 
 	  <!--<input type="radio" id="one" value="hardcover-fiction" v-model="selectedOption">
 		<label for="one">Hardcover Fiction</label>
 		<input type="radio" id="two" value="mass-market-paperback" v-model="selectedOption">
 		<label for="two">Paperback</label>-->
+		<div id=selectionContainer>
+			<select v-model="selectedOption">
+			  <option>Combined Print and E-Book Fiction</option>
+			  <option>Combined Print and E-Book Nonfiction</option>
+			  <option>Hardcover Fiction</option>
+			  <option>Hardcover Nonfiction</option>
+			  <option>Trade Fiction Paperback</option>
+			  <option>Paperback Nonfiction</option>
+			  <option>Advice, How-To, and Miscellaneous</option>
+			  <option>Children's Middle-Grade Hardcover</option>
+			  <option>Picture Books</option>
+			  <option>Childrens Series Books</option>
+			  <option>Young Adult Hardcover</option>
+			  <option>Business Books</option>
+			  <option>Science</option>
+			  <option>Sports and Fitness</option>
+			</select>
 
-		<select v-model="selectedOption">
-		  <option>Combined Print and E-Book Fiction</option>
-		  <option>Combined Print and E-Book Nonfiction</option>
-		  <option>Hardcover Fiction</option>
-		  <option>Hardcover Nonfiction</option>
-		  <option>Trade Fiction Paperback</option>
-		  <option>Paperback Nonfiction</option>
-		  <option>Advice, How-To, and Miscellaneous</option>
-		  <option>Children's Middle-Grade Hardcover</option>
-		  <option>Picture Books</option>
-		  <option>Childrens Series Books</option>
-		  <option>Young Adult Hardcover</option>
-		  <option>Business Books</option>
-		  <option>Science</option>
-		  <option>Sports and Fitness</option>
-		</select>
-
-		<button 
-	    type="button"
-	    v-on:click=getBook()
-	    >Generate New Read
-	  </button>
+			<button 
+		    type="button"
+		    v-on:click=getBook()
+		    >Generate New Read
+		  </button>
+		</div>
+		
 
 	  <div id="resultsContainer">
 	    <h2>{{ selectedOption }}</h2>
