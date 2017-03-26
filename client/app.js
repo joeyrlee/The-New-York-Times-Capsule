@@ -6,7 +6,8 @@ var app = new Vue({
   data: {
   	selectedOption: '',
   	book: '',
-  	bookImage: ''
+  	books: [],
+    date: ''
   },
   methods: {
   	//call the NYTimes API and store/update the data in our book
