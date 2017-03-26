@@ -1,15 +1,17 @@
 #app {
-  width: 80%;
-  margin: 5% 12% 0 12%;
+  width: 76%;
+  margin: 4% 12% 0 12%;
   padding: 0;
   border: 1px solid black;
   /*border-top: 2px solid black;*/
 }
 
 #title {
-  font: 50px Times;
-  padding: 0;
+  font: 55px Times;
+  display:inline-block;
+  padding: 0 33% 0 0;
   margin: 0;
+  border: 1px solid black;
 }
 
 p {
