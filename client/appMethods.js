@@ -3,7 +3,8 @@ var getBook = function() {
 	axios.get('/newbook/' + this.encodeListName(this.selectedOption))
   .then(function (response) {
   	console.log('response: ', response);
-		app.$data.book = response.data.results.books[0];
+		app.$data.books = response.data.results.books.slice(0,5);
+		app.$data.book = app.$data.books[0];
 		// app.$data.bookImage = app.$data.book.book_image;
 		// var img = document.createElement('img');
 		// img.setAttribute('src', app.$data.bookImage);
