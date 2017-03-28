@@ -6,12 +6,34 @@
   /*border-top: 2px solid black;*/
 }
 
+#header {
+  display: flex;
+  height: 60px;
+}
+
 #title {
+  flex-grow: 8;
   font: 55px Times;
-  display:inline-block;
-  padding: 0 33% 0 0;
+  padding: 0 25% 0 0;
   margin: 0;
-  border: 1px solid black;
+}
+
+.social {
+  flex-grow: 1;
+  height: 40px;
+  width: 40px;
+  margin: 15px 0;
+}
+
+.social:hover {
+  height: 42px;
+  width: 42px;
+}
+
+#facebook {
+}
+
+#twitter {
 }
 
 p {
