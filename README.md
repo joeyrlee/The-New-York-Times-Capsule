@@ -1,5 +1,5 @@
 # The New York Times Capsule
-A time capsule app for visiting past The New York Times Best Sellers lists a la Vue.js and The New York Times Books api
+A time capsule app for visiting and getting recommendations from past The New York Times Best Sellers lists
 
 ### Getting Started
 To get started, you will need an API key to communicate with the New York Times Books api:
