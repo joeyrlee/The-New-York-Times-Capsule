@@ -1,10 +1,7 @@
-//Vue.js file for facilitating the 
-//two-way search input data binding
-
 var app = new Vue({
   el: '#app',
   data: {
-  	selectedOption: '',
+  	selectedCategory: '',
   	book: '',
   	books: [],
     date: ''
@@ -15,10 +12,6 @@ var app = new Vue({
 
 		//transforms the english-formatted selected 
 		//option to the api-friendly encoded format
-		encodeListName: encodeListName,
-
-		//make a call to the server to fetch stored user data
-		//persisted in the database
-		getUserData: getUserData
+		encodeListName: encodeListName
 	}
 });
