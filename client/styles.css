@@ -2,8 +2,6 @@
   width: 76%;
   margin: 4% 12% 0 12%;
   padding: 0;
-  border: 1px solid black;
-  /*border-top: 2px solid black;*/
 }
 
 #header {
@@ -18,8 +16,11 @@
   margin: 0;
 }
 
-.social {
+.social-share {
   flex-grow: 1;
+}
+
+.social {
   height: 40px;
   width: 40px;
   margin: 15px 0;
@@ -30,38 +31,25 @@
   width: 42px;
 }
 
-#facebook {
-}
-
-#twitter {
-}
-
 p {
+  font-size: 17px;
   color: #666;
   padding: 0;
-  margin: 0;
+  margin: 0 0 20px 0;
+}
+
+#selectionsContainer {
+  border-top: 1px solid #ccc;
+  padding-bottom: 5px;
+  border-bottom: 2px solid black;
+  margin-top: 0px;
 }
 
 button {
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
-
-h2 {
-  font: inherit Arial;
+#searchCategory {
+  font: 20px Arial;
   font-weight: bold;
 }
-
-/*#usernameContainer {
-  position: absolute;
-  left: 85%;
-  top: 1%;
-}*/
-
-/*#book p {
-  width: 20%;
-  margin: 20px 40% 0 40%;
-  border: 1px solid black;
-  text-align: left;
-  font-weight: bold;
-}*/
