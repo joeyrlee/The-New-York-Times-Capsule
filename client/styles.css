@@ -10,23 +10,34 @@
 }
 
 #title {
-  flex-grow: 8;
+  flex: 3;
+  flex-shrink: 1;
   font: 55px Times;
-  padding: 0 25% 0 0;
   margin: 0;
 }
 
-.social-share {
-  flex-grow: 1;
-}
-
-.social {
+.social-icon {
+  flex: 1;
+  flex-wrap: wrap;
   height: 40px;
   width: 40px;
-  margin: 15px 0;
+  margin: 0px 0px;
 }
 
-.social:hover {
+/* compensation for icon size appearance disparities */
+#twitter-icon {
+  position: relative;
+  top: 2px;
+  height: 37px;
+  width: 37px;
+}
+
+#twitter-icon:hover {
+  height: 39px;
+  width: 39px;
+}
+
+.social-icon:hover {
   height: 42px;
   width: 42px;
 }
