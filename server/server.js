@@ -5,6 +5,10 @@ var handleRequest = require('./requestHandler.js');
 
 app.use(express.static(path.join(__dirname, '../client')));
 
+app.get('/newbooks/:date/:listName', function ({params}, res) {
+  handleRequest(params.listName, res, params.date);
+})
+
 app.get('/newbook/:listName', function ({params}, res) {
   handleRequest(params.listName, res);
 })
