@@ -4,11 +4,14 @@ var app = new Vue({
   	selectedCategory: '',
   	book: '',
   	books: [],
-    date: ''
+    date: '',
+    singleBook: false
   },
   methods: {
-  	//call the NYTimes API and store/update the data in our book
-  	getBook: getBook,
+  	//bind the global ajax methods to the vue instance
+    //already bound in index.html to button click handlers
+    getBooks: getBooks,
+  	getRandBook: getRandBook,
 
 		//transforms the english-formatted selected 
 		//option to the api-friendly encoded format
