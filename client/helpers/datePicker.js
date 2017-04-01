@@ -6,7 +6,6 @@ $(function() {
 // Save the newly chosen date
 $(function() {
 	$('#datepicker').change(function(e) {
-		console.log(e.target.value);
     app.$data.date = e.target.value;
 	})
 });
