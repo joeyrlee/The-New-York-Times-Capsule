@@ -2,10 +2,8 @@ var app = new Vue({
   el: '#app',
   data: {
   	selectedCategory: '',
-  	book: '',
-  	books: [],
     date: '',
-    singleBook: false
+    books: []
   },
   methods: {
   	//bind the global ajax methods to the vue instance
