@@ -24,6 +24,11 @@
   margin: 0px 0px;
 }
 
+.social-icon:hover {
+  height: 42px;
+  width: 42px;
+}
+
 /* compensation for icon size appearance disparities */
 #twitter-icon {
   position: relative;
@@ -35,11 +40,6 @@
 #twitter-icon:hover {
   height: 39px;
   width: 39px;
-}
-
-.social-icon:hover {
-  height: 42px;
-  width: 42px;
 }
 
 p {
@@ -60,7 +60,7 @@ button {
   margin-top: 10px;
 }
 
-#searchCategory {
+#selectedCategory {
   font: 20px Arial;
   font-weight: bold;
 }
