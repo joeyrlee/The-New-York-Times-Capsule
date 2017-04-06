@@ -11,11 +11,12 @@
 
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
 
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
   <link rel="icon" href="http://www.powerlineblog.com/ed-assets/2015/12/20-ny-times-logo.w529.h529.2x.jpg" />
   <link rel="stylesheet" href="styles.css" />
+  <script src="components/Book.js"></script>
   <title>The New York Times Capsule</title>
 </head>
 <body>
@@ -24,14 +25,7 @@
 		  <h1 id="title">The New York Times Capsule</h1>
 		  <a
 		  	href="#"
-		  	onclick="
-					window.open(
-					  'http://www.facebook.com/sharer.php?u=https://www.nytimes.com/books/best-sellers/?_r=1', 
-					  'facebook-share-dialog',
-					  'width=626,height=436'
-					); 
-					return false;
-				"
+		  	onclick="shareDialog('http://www.facebook.com/sharer.php?u=')"
 			>
 			  <img
 			  	alt="share to facebook"
@@ -43,14 +37,7 @@
 			</a>
 			<a
 				href="#"
-				onclick="
-					window.open(
-						'https://twitter.com/intent/tweet?url=https%3A%2F%2Fnytimes.com%2Fbooks%2fbest-sellers%2f?_r=1',
-						'twitter-share-dialog',
-					  'width=626,height=436'
-					);
-					return false;
-				"
+				onclick="shareDialog('https://twitter.com/intent/tweet?url=')"
 			>
 			  <img
 			  	alt="share to twitter"
@@ -84,28 +71,28 @@
 		  <input type="text" id="datepicker">
 			<button 
 		    type="button"
-		    v-on:click=getBook()
+		    v-on:click=getBooks()
 		    >See List
 		  </button>
 			<button 
 		    type="button"
-		    v-on:click=getBook()
+		    v-on:click=getRandBook()
 		    >Recommend Me A Book
 		  </button>
 		</div>
 
-	  <div id="resultsContainer">
-	    <h2 id="selectedCategory">{{ selectedCategory }} &#10093;</h2>
-	    <div id="book">
-	      <p id="bookTitle"><u>{{ book.title }}</u></p>
-	      <p id="author">{{ book.author }}</p>
-	      <p id="description">{{ book.description }}</p>
-	    </div>
+    <h2 id="selectedCategory">{{ selectedCategory }} &#10093;</h2>
+	  <div id="resultsContainer" v-if="books.length > 0">
+			<ul>
+				<book v-for="book in books" v-bind:book="book"></book>
+			</ul>
 	  </div>
+
+
 	</div>
 
-  <script src="helpers/datePicker.js"></script>
-  <script src="helpers/appMethods.js"></script>
+  <script src="helpers/assortedMethods.js"></script>
+  <script src="helpers/vueMethods.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
