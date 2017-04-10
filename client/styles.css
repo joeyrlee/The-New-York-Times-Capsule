@@ -20,7 +20,7 @@ html {
   font: 2em Times;
 }
 
-#social-container {
+.social-icon {
   display: none;
 }
 
@@ -102,6 +102,10 @@ button {
     color: #666;
     margin: 0 0 1.5em 0;
   }
+
+  button {
+    width: 75%;
+  }
 }
 
 
@@ -114,6 +118,31 @@ button {
     width: 50%;
   }
 }
+
+
+@media (min-width: 670px) {
+  #title {
+    display: inline-block;
+    width: 85%;
+  }
+
+  .social-icon {
+    display: inline-block;
+    width: 32px;
+  }
+
+  .social-icon:hover {
+    height: 34px;
+    width: 34px;
+  }
+
+  #facebook-icon {
+    margin-left: 1em;
+  }
+}
+
+
+@media (min-width: 765px) {
 
 
 /* For Desktop Monitors */
