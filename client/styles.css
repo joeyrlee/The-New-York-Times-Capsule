@@ -20,7 +20,7 @@ html {
   font: 2em Times;
 }
 
-.social-icon, #subtitle {
+.social-icon, #subtitle, .img-box, .book-image, .book-description {
   display: none;
 }
 
@@ -75,10 +75,6 @@ button {
 
 .book-author {
   font: 1em Arial;
-}
-
-.book-image, .book-description {
-  display: none;
 }
 
 .book-title {
@@ -147,7 +143,7 @@ button {
     flex: 1;
     display: inline-block;
     border-right: 1px solid #e2e2e2;
-    padding-left: 1em;
+    padding: 0 .5em;
   }
 
   .book:first-child {
@@ -155,6 +151,7 @@ button {
   }
 
   .book:last-child {
+    padding-right: 0;
     border-right: none;
   }
 
@@ -165,11 +162,21 @@ button {
     margin-left: -.25em;
   }
 
+  .img-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+  }
+
   .book-image {
     display: inline-block;
     height: 110px;
     max-width: 82px;
-    margin: 0 0 10% 12%;
+  }
+
+  .book-title {
+    margin-bottom: 2%;
   }
 }
 
