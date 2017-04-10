@@ -36,7 +36,7 @@ var getRandBook = function() {
 //to the api-friendly encoded format
 var encodeListName = function(listName) {
 	switch(listName) {
-		case 'Combined Print and E-Book Fiction':
+		case 'Combined Print & E-Book Fiction':
 			return 'combined-print-and-e-book-fiction';
 		case 'Hardcover Fiction':
 			return 'hardcover-fiction';
