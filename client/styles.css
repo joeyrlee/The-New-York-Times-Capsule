@@ -102,10 +102,6 @@ button {
 
 
 @media (min-width: 603px) {
-  #title {
-    font: 2.75em Times;
-  }
-
   button {
     width: 50%;
   }
@@ -135,6 +131,14 @@ button {
 
 
 @media (min-width: 765px) {
+  #title {
+    font: 2.75em Times;
+  }
+
+  #subtitle {
+    font: 1.25em Times;
+  }
+
   #books {
     flex-direction: row;
   }
@@ -178,6 +182,10 @@ button {
   .book-title {
     margin-bottom: 2%;
   }
+}
+
+
+@media (min-width: 1020px) {
 }
 
 
