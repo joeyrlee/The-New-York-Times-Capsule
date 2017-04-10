@@ -20,11 +20,7 @@ html {
   font: 2em Times;
 }
 
-.social-icon {
-  display: none;
-}
-
-#subtitle {
+.social-icon, #subtitle {
   display: none;
 }
 
@@ -120,7 +116,7 @@ button {
 }
 
 
-@media (min-width: 670px) {
+@media (min-width: 678px) {
   #title {
     display: inline-block;
     width: 85%;
@@ -128,12 +124,12 @@ button {
 
   .social-icon {
     display: inline-block;
-    width: 32px;
+    width: 2em;
   }
 
   .social-icon:hover {
-    height: 34px;
-    width: 34px;
+    height: 2.1em;
+    width: 2.1em;
   }
 
   #facebook-icon {
@@ -143,6 +139,39 @@ button {
 
 
 @media (min-width: 765px) {
+  #books {
+    flex-direction: row;
+  }
+
+  .book {
+    flex: 1;
+    display: inline-block;
+    border-right: 1px solid #e2e2e2;
+    padding-left: 1em;
+  }
+
+  .book:first-child {
+    padding-left: 0;
+  }
+
+  .book:last-child {
+    border-right: none;
+  }
+
+  .book-rank {
+    display: inline-block;
+    width: 1em;
+    position: absolute;
+    margin-left: -.25em;
+  }
+
+  .book-image {
+    display: inline-block;
+    height: 110px;
+    max-width: 82px;
+    margin: 0 0 10% 12%;
+  }
+}
 
 
 /* For Desktop Monitors */
