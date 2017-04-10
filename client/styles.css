@@ -11,6 +11,10 @@ html {
   width: 98%;
 }
 
+#app {
+  margin-left: 2%;
+}
+
 #title {
   margin-top: 0;
   font: 2em Times;
@@ -30,12 +34,17 @@ html {
 
 button {
   margin-top: .25em;
+  display: block;
 }
 
 #selected-category {
   font: 1em Arial;
   font-weight: bold;
 }
+
+/*#selected-category:hover {
+  text-decoration: underline;
+}*/
 
 #books {
   padding: 0;
@@ -55,9 +64,11 @@ button {
 
 .book-rank {
   flex: 1;
-  font-size: 1.5em;
+  font-size: 1.75em;
   font-weight: bold;
   color: #999;
+  margin: 0;
+  padding: 0;
 }
 
 .book-content {
@@ -66,12 +77,8 @@ button {
   flex-direction: column;
 }
 
-.book-title {
-
-}
-
 .book-author {
-
+  font: 1em Arial;
 }
 
 .book-image, .book-description {
@@ -81,6 +88,31 @@ button {
 .book-title {
   font: 1em Arial;
   font-weight: bold;
+}
+
+
+@media (min-width: 428px) {
+  #title {
+    margin: 0;
+    font: 2.25em Times;
+  }
+
+  #subtitle {
+    display: block;
+    color: #666;
+    margin: 0 0 1.5em 0;
+  }
+}
+
+
+@media (min-width: 603px) {
+  #title {
+    font: 2.75em Times;
+  }
+
+  button {
+    width: 50%;
+  }
 }
 
 
