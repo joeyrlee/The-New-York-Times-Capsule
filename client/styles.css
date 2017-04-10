@@ -28,6 +28,61 @@ html {
   margin: 0;
 }
 
+button {
+  margin-top: .25em;
+}
+
+#selected-category {
+  font: 1em Arial;
+  font-weight: bold;
+}
+
+#books {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.book {
+  list-style-type: none;
+  display: flex;
+  margin-bottom: 1em;
+}
+
+.book:last-child {
+  margin-bottom: 0;
+}
+
+.book-rank {
+  flex: 1;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #999;
+}
+
+.book-content {
+  flex: 9;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-title {
+
+}
+
+.book-author {
+
+}
+
+.book-image, .book-description {
+  display: none;
+}
+
+.book-title {
+  font: 1em Arial;
+  font-weight: bold;
+}
+
 
 /* For Desktop Monitors */
 /*@media (min-width: 1009px) {
