@@ -6,7 +6,7 @@ html {
   box-sizing: inherit;
 }
 
-/* mobile-first */
+/* Mobile-first Layout */
 * {
   width: 98%;
 }
@@ -102,8 +102,9 @@ button {
 
 
 @media (min-width: 603px) {
-  button {
-    width: 50%;
+  #buttons {
+    display: flex;
+    justify-content: space-around;
   }
 }
 
@@ -176,6 +177,7 @@ button {
   .book-image {
     display: inline-block;
     height: 110px;
+    width: 71px;
     max-width: 82px;
   }
 
@@ -185,7 +187,88 @@ button {
 }
 
 
-@media (min-width: 1020px) {
+@media (min-width: 850px) {
+  body {
+    width: 100%;
+    display: flex;
+  }
+
+  #app {
+    margin: auto;
+    border: 1px solid black;
+    padding: 0 4%;
+  }
+
+  /* Leverage Viewport Units for infinite scalability
+     for any size desktop monitor */
+
+  /* Generic RD settings for datepicker */
+  * {
+    /*font-size: 1.5vw;*/
+  }
+
+  #title {
+    font-size: 5.5vw;
+  }
+
+  .social-icon {
+    width: 4vw;
+  }
+
+  .social-icon:hover {
+    height: 4.2vw;
+    width: 4.2vw;
+  }
+
+  #subtitle, .instructions {
+    font-size: 2vw;
+  }
+
+  select {
+    height: 2.1vw;
+    font-size: 1.5vw;
+  }
+
+  #datepicker {
+    font-size: 1.5vw;
+  }
+
+  #buttons {
+    height: 2.75vw;
+  }
+
+  button {
+    font-size: 1.5vw;
+  }
+
+  #selected-category {
+    font-size: 1.8vw;
+    margin-top: 4%;
+  }
+
+  .book-rank {
+
+  }
+
+  /*.img-box {
+    margin?
+  }*/
+
+  .book-image {
+
+  }
+
+  .book-title {
+
+  }
+
+  .book-author {
+
+  }
+
+  .book-description {
+    /*display: block;*/
+  }
 }
 
 
