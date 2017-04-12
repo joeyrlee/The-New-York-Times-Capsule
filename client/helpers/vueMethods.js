@@ -28,7 +28,9 @@ var getBooks = function() {
 //make ajax request to our server
 var getRandBook = function() {
 	axios.get('/newbook/' + encodeListName(this.selectedCategory))
-  .then(function(response){ handleSuccess(response, 1) })
+  .then(function(response){
+  	handleSuccess(response, 1)
+  })
   .catch(function(error){ handleError(error) })
 }
 
