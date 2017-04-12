@@ -64,7 +64,7 @@ button {
   font-weight: bold;
   color: #999;
   margin: 0;
-  padding: 0;
+  padding-left: 1.5%;
 }
 
 .book-content {
@@ -181,8 +181,12 @@ button {
     max-width: 82px;
   }
 
-  .book-title {
-    margin-bottom: 2%;
+  .book:first-child .book-content {
+    padding-left: 2%;
+  }
+
+  .book-author {
+    margin: .5vw 0;
   }
 }
 
@@ -201,6 +205,7 @@ button {
 
   /* Leverage Viewport Units for infinite scalability
      for any size desktop monitor */
+  /* Top Half of App */
 
   /* Generic RD settings for datepicker */
   * {
@@ -241,13 +246,15 @@ button {
     font-size: 1.5vw;
   }
 
+  /* Lower Half of App */
   #selected-category {
     font-size: 1.8vw;
     margin-top: 4%;
   }
 
   .book-rank {
-
+    font-size: 3.2vw;
+    padding-left: 1.5%;
   }
 
   /*.img-box {
@@ -255,19 +262,18 @@ button {
   }*/
 
   .book-image {
-
+    height: 12.5vw;
+    min-width: 8.1vw;
   }
 
-  .book-title {
-
-  }
-
-  .book-author {
-
+  .book-title, .book-author {
+    font-size: 1.8vw;
   }
 
   .book-description {
-    /*display: block;*/
+    display: block;
+    color: #333;
+    font-size: 1.8vw;
   }
 }
 
