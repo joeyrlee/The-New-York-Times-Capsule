@@ -14,12 +14,6 @@ var handleRequest = function(listName, res, date) {
 		res.send(response.data);
 	})
 	.catch(function(error) {
-		console.log('*************************')
-		console.log('api request error: ', error);
-		console.log('*************************')
-		console.log('for selected category: ', listName);
-		console.log('for date: ', date);
-		//change the error response message if the request was to be random for greater specificity
 		isRand
 		  ? res.send(`Uh-oh! There seems to have been an error retrieving the user-selected data for the "${listName}" search. Please try again!`)
 		  : res.send(`Uh-oh! There seems to have been an error retrieving the pseudo-random data for the "${listName}" search. Please try again!`)
