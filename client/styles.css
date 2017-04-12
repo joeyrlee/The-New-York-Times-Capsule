@@ -38,10 +38,6 @@ button {
   font-weight: bold;
 }
 
-/*#selected-category:hover {
-  text-decoration: underline;
-}*/
-
 #books {
   padding: 0;
   display: flex;
@@ -208,7 +204,7 @@ button {
 
   /* Generic RD settings for datepicker */
   * {
-    /*font-size: 1.5vw;*/
+    font-size: 1.5vw;
   }
 
   #title {
@@ -256,10 +252,6 @@ button {
     padding-left: 1.5%;
   }
 
-  /*.img-box {
-    margin?
-  }*/
-
   .book-image {
     height: 12.5vw;
     min-width: 8.1vw;
@@ -275,74 +267,3 @@ button {
     font-size: 1.8vw;
   }
 }
-
-
-/* For Desktop Monitors */
-/*@media (min-width: 1009px) {
-  #app {
-    width: 76%;
-    margin: 4% 12% 0 12%;
-  }
-}*/
-
-
-
-
-/*  #header {
-    display: flex;
-  }
-
-  #title {
-    flex: 3;
-    flex-shrink: 1;
-    font: 55px Times;
-    margin: 0;
-  }
-
-  .social-icon {
-    flex: 1;
-    flex-wrap: wrap;
-    height: 40px;
-    width: 40px;
-    margin: 0px 0px;
-  }
-
-  .social-icon:hover {
-    height: 42px;
-    width: 42px;
-  }
-
-  #twitter-icon {
-    position: relative;
-    top: 2px;
-    height: 37px;
-    width: 37px;
-  }
-
-  #twitter-icon:hover {
-    height: 39px;
-    width: 39px;
-  }
-
-  p {
-    font-size: 17px;
-    color: #666;
-    padding: 0;
-    margin: 0 0 20px 0;
-  }
-
-  #selections-container {
-    border-top: 1px solid #ccc;
-    padding-bottom: 5px;
-    border-bottom: 2px solid black;
-    margin-top: 0px;
-  }
-
-  button {
-    margin-top: 10px;
-  }
-
-  #selected-category {
-    font: 20px Arial;
-    font-weight: bold;
-  }*/
