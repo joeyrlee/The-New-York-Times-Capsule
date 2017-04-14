@@ -4,7 +4,7 @@ var compression = require('compression');
 var app = express();
 var handleRequest = require('./requestHandler.js');
 
-app.use(compression())
+app.use(compression());
 app.use(express.static(path.join(__dirname, '../client')));
 
 app.get('/newbooks/:date/:listName', function ({params}, res) {
