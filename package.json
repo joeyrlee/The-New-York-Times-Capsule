@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server/server.js",
-    "build-dev": "webpack --progress",
-    "build-prod": "webpack -p --progress",
+    "dev": "webpack-dev-server --progress --open --hot",
+    "build": "webpack -p --progress",
     "env-dev": "set NODE_ENV=development",
     "env-prod": "set NODE_ENV=production"
   },
@@ -27,6 +27,7 @@
     "style-loader": "^0.16.1",
     "vue-loader": "^11.3.4",
     "vue-template-compiler": "^2.2.6",
-    "webpack": "fulls1z3/webpack#v2.2.1-harmony"
+    "webpack": "fulls1z3/webpack#v2.2.1-harmony",
+    "webpack-dev-server": "^2.4.2"
   }
 }
