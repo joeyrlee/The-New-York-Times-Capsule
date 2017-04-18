@@ -1,7 +1,11 @@
+var path = require('path')
+
 module.exports = {
   entry: './src/main.js',
   output: {
-    filename: './dist/bundle.js'
+    path: path.resolve(__dirname, './dist'),
+    publicPath: '/dist/',
+    filename: 'bundle.js'
   },
   module: {
     rules: [
@@ -29,5 +33,9 @@ module.exports = {
         use: [ 'style-loader', 'css-loader' ]
       }
     ]
+  },
+  devServer: {
+    historyApiFallback: true,
+    noInfo: true
   }
 }
