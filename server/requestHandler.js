@@ -1,9 +1,9 @@
-var axios = require('axios');
-var API_KEY = require('./config/config.js');
-var generateRandomDate = require('./randGenerator.js');
+const axios = require('axios');
+const API_KEY = require('./config/config.js');
+const generateRandomDate = require('./randGenerator.js');
 
-var handleRequest = function(listName, res, date) {
-	var isRand = date ? false : true;
+const handleRequest = function(listName, res, date) {
+	let isRand = date ? false : true;
 	//if date is undefined, generate a random one
 	//for pseudo-random book recommendations
 	date = date || generateRandomDate();
