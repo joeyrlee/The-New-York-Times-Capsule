@@ -14,7 +14,6 @@
 
 <script>
 	export default {
-		name: 'book',
 		props: ['book']
 	}
 </script>
