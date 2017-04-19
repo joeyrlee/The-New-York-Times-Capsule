@@ -1,6 +1,6 @@
 require('./styles.css');
-import App from './components/App';
-import book from './components/Book.vue';
+import App from './components/App.js';
+import Book from './components/Book.vue';
 import shareDialog from './helpers/assortedMethods.js';
 import {
 	handleSuccess,
@@ -13,12 +13,12 @@ import {
 window.vue = new Vue({
 	el: '#vue',
 	components: {
-		book
+		Book
 	},
 	data: {
   	selectedCategory: '',
-    date: '',
-    books: []
+  	date: '',
+  	books: []
   },
   template: App
 })
