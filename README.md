@@ -16,12 +16,12 @@ Once secured, plug in your key to config/config.example.js (replace API_KEY_HERE
 Next open your terminal, navigate to the project folder, and type in the following instructions:
 
 ```javascript
-yarn (or npm) install
+yarn install (or npm install)
 ```
 
 Then run 
 ```javascript
-yarn (or npm) run start
+yarn run start (or npm run start)
 ```
 
 Once completed, simply open your browser and navigate to the address http://127.0.0.1:3000 and enjoy!
