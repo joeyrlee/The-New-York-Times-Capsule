@@ -1,5 +1,5 @@
 # The New York Times Capsule
-A time capsule app for visiting and getting recommendations from past The New York Times Best Sellers lists
+A web app for visiting and getting book recommendations from past and present lists of The New York Times Best Sellers.
 
 <img src="TNYTC Small Mobile SS.png" title="Small Mobile Rendering" />
 <img src="TNYTC 850px+ SS.png" title="Normal/Large Monitor Rendering" />
